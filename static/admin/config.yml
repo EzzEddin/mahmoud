@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "static/uploads"
+public_folder: "uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{filename}}"
+    fields:
+     - {label: "Title", name: "title", widget: "string", required: true}
+     - {label: "Publish Date", name: "date", widget: "date"}
+     - {label: "Draft", name: "draft", widget: "boolean", default: true}
+     - {label: "Author", name: "author", widget: "hidden", default: Mahmoud Abdullah}
+     - {label: "Type", name: "type", widget: "hidden", default: "post"}
+     - {label: "Body", name: "body", widget: "markdown"}
